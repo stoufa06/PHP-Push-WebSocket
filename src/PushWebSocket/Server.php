@@ -56,6 +56,15 @@ class Server {
 	private $verboseMode;
 
 	/**
+	 * @var callable
+	 */
+	private $dataSource;
+
+	/**
+	 * @var int
+	 */
+	private $interval = 1;
+	/**
 	 * Server constructor
 	 * @param $address The address IP or hostname of the server (default: 127.0.0.1).
 	 * @param $port The port for the master socket (default: 5001)
@@ -291,8 +300,12 @@ class Server {
 
 				// push something to the client
 				$seconds = rand(2, 5);
-				$this->send($client, "I am waiting {$seconds} seconds");
-				sleep($seconds);
+				if ($this->dataSource) {
+					$data = $this->dataSource->__invoke();
+					$this->send($client, $data );
+				}
+				
+				sleep($this->interval);
 			}
 		}
 	}
@@ -421,7 +434,7 @@ class Server {
 	 * @param $text the text to display
 	 * @param $exit if true, the process will exit
 	 */
-	private function console($text, $exit = false) {
+	public function console($text, $exit = false) {
 		$text = date('[Y-m-d H:i:s] ').$text."\r\n";
 		if($exit) {
 			die($text);
@@ -430,6 +443,11 @@ class Server {
 		if($this->verboseMode) {
 			echo $text;
 		}
+	}
+
+
+	public function setDataSource(callable $dataSource) {
+		$this->dataSource = $dataSource;
 	}
 }
 
