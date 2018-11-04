@@ -10,12 +10,6 @@
         "rfc",
         "6455"
     ],
-    "authors": [
-        {
-            "name": "Sann-Remy Chea",
-            "email": "src@srchea.com"
-        }
-    ],
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.0"
