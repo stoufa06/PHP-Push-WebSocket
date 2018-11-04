@@ -2,7 +2,7 @@
     "name": "stoufa06/php-push-websocket",
     "description": "Lightweight PHP WebSocket server handling several clients.",
     "type": "library",
-    "license": "GPLv3",
+    "license": "LGPL-3.0+",
     "keywords": [
         "websocket",
         "push",
