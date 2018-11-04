@@ -1,5 +1,5 @@
 {
-    "name": "srchea/php-push-web-socket",
+    "name": "stoufa06/php-push-web-socket",
     "description": "Lightweight PHP WebSocket server handling several clients.",
     "type": "library",
     "license": "GPLv3",
