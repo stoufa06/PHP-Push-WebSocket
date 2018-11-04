@@ -27,7 +27,7 @@ $address = '127.0.0.1';
 $port = 5001;
 $verboseMode = true;
 
-$server = new \PushWebSocket\Server($address, $port, $verboseMode);
+$server = new \PushWebSocket\TestServer($address, $port, $verboseMode);
 $server->run();
 
 ?>
