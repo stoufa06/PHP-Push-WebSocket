@@ -6,7 +6,7 @@ PHP Push WebSocket is an implementation of the WebSocket protocol following the 
 Installation with Composer
 --------------------------
 
-To install the latest stable version: `composer require "stoufa06/php-push-web-socket"`
+To install the latest stable version: `composer require "stoufa06/php-push-websocket"`
 
 Usage
 -----
